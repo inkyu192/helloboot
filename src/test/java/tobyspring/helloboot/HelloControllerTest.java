@@ -3,6 +3,8 @@ package tobyspring.helloboot;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.*;
+
 public class HelloControllerTest {
 
     @Test
@@ -11,18 +13,18 @@ public class HelloControllerTest {
 
         String ret = helloController.hello("Test");
 
-        Assertions.assertThat(ret).isEqualTo("Test");
+        assertThat(ret).isEqualTo("Test");
     }
 
     @Test
     void failHelloController() {
         HelloController helloController = new HelloController(name -> name);
 
-        Assertions.assertThatThrownBy(() -> {
+        assertThatThrownBy(() -> {
             helloController.hello(null);
         }).isInstanceOf(IllegalArgumentException.class);
 
-        Assertions.assertThatThrownBy(() -> {
+        assertThatThrownBy(() -> {
             helloController.hello("");
         }).isInstanceOf(IllegalArgumentException.class);
     }
