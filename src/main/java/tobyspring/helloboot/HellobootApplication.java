@@ -2,10 +2,12 @@ package tobyspring.helloboot;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
 import tobyspring.config.MySpringBootApplication;
 
 
+//@SpringBootApplication
 @MySpringBootApplication
 public class HellobootApplication {
     private final JdbcTemplate jdbcTemplate;
@@ -21,5 +23,7 @@ public class HellobootApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(HellobootApplication.class, args);
+        //아래 사용하면 tomcat 빈 등록할때 프로퍼티값 못 읽어옴 수정 필요
+//        MySpringApplication.run(HellobootApplication.class, args);
     }
 }
