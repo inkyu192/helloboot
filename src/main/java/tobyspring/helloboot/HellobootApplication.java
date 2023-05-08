@@ -23,7 +23,6 @@ public class HellobootApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(HellobootApplication.class, args);
-        //아래 사용하면 tomcat 빈 등록할때 프로퍼티값 못 읽어옴 수정 필요
 //        MySpringApplication.run(HellobootApplication.class, args);
     }
 }
